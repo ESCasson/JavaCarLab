@@ -1,3 +1,5 @@
+import components.Components;
+
 import java.util.ArrayList;
 
 public class Car {
@@ -8,7 +10,7 @@ public class Car {
     private String colour;
     private double damage;
     private int price;
-    private ArrayList<Integer> components;
+    private ArrayList<Components> components;
 
     public Car(String make, String model, int doors, String colour, int damage, int price) {
         this.make = make;
@@ -17,7 +19,7 @@ public class Car {
         this.colour = colour;
         this.damage = damage;
         this.price = price;
-        ArrayList<Integer> components = new ArrayList<>();
+        this.components = new ArrayList<>();
     }
 
     public String getMake() {
@@ -61,5 +63,14 @@ public class Car {
     public void repair() {
         this.price += this.damage;
         this.damage = 0;
+    }
+
+
+    public int getComponentCount() {
+        return this.components.size();
+    }
+
+    public void addComponent(Components newComponent) {
+        this.components.add(newComponent);
     }
 }
