@@ -1,7 +1,9 @@
 package components;
 
 
-    public class ElectricEngine extends Components{
+import behaviour.IElectric;
+
+public class ElectricEngine extends Components implements IElectric {
         private String fuelType;
         private int fuelLevel;
 
@@ -14,6 +16,11 @@ package components;
         public String getFuelType(){
             return this.fuelType;
         }
+
+    @Override
+    public void addCharge(int amount) {
+        this.fuelLevel = this.fuelLevel + amount;
     }
+}
 
 
