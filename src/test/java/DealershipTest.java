@@ -43,6 +43,6 @@ public class DealershipTest {
         car.setDamage(4000.00);
         dealership.payForRepairs(car);
         assertEquals(0, car.getDamage(), 0);
-        assertEquals(5900, dealership.getTill(), 0);
+        assertEquals(6000, dealership.getTill(), 0);
     }
 }
