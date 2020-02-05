@@ -65,7 +65,6 @@ public class Car {
         this.damage = 0;
     }
 
-
     public int getComponentCount() {
         return this.components.size();
     }

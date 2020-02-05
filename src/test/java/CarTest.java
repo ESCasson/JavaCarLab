@@ -1,4 +1,5 @@
 import components.FuelEngine;
+import components.GearBox;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,11 +11,13 @@ public class CarTest {
 
     Car car;
     FuelEngine engine;
+    GearBox gearBox;
 
     @Before
     public void before() {
         car = new Car("Nissan", "Skyline", 3, "Midnight Purple II", 100, 20000);
         engine = new FuelEngine("Nissan", "R34 N1", "Petrol");
+        gearBox = new GearBox("Nissan", "6 Speed", "Manual");
     }
 
     @Test
@@ -72,8 +75,15 @@ public class CarTest {
     }
 
     @Test
-    public void canAddComponent() {
+    public void canAddEngine() {
         car.addComponent(engine);
         assertEquals(1, car.getComponentCount());
+    }
+
+    @Test
+    public void canAddComponents() {
+        car.addComponent(engine);
+        car.addComponent(gearBox);
+        assertEquals(2, car.getComponentCount());
     }
 }

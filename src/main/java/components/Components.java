@@ -1,6 +1,7 @@
 package components;
 
     public abstract class Components {
+
         private final String make;
         private final String model;
 
@@ -8,6 +9,7 @@ package components;
             this.make = make;
             this.model = model;
         }
+
         public String getMake(){
             return this.make;
         }

@@ -12,4 +12,5 @@ public class GearBox extends Components {
     public String getTransmission() {
         return transmission;
     }
+
 }
