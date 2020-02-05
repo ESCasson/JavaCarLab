@@ -20,7 +20,6 @@ public class Car {
         ArrayList<Integer> components = new ArrayList<>();
     }
 
-
     public String getMake() {
         return this.make;
     }
@@ -57,7 +56,10 @@ public class Car {
         this.damage += newDamage;
     }
 
+    // adds value of repairs to car price value
+    // will need to subtract value of damage from dealership till - GS
     public void repair() {
+        this.price += this.damage;
         this.damage = 0;
     }
 }

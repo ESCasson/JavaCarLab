@@ -44,14 +44,14 @@ public class CarTest {
 
     @Test
     public void canSetColour() {
-        car.setColour("Millennium Jade");
-        assertEquals("Millennium Jade", car.getColour());
+        car.setColour("Millenium Jade");
+        assertEquals("Millenium Jade", car.getColour());
     }
 
     @Test
     public void canSetPrice() {
-        car.setPrice(30000);
-        assertEquals(30000, car.getPrice(), 0.00);
+        car.setPrice(25000);
+        assertEquals(25000, car.getPrice(), 0.00);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class CarTest {
     @Test
     public void canRepair() {
         car.repair();
-        assertEquals(0, car.getDamage(), 0.00);
+        assertEquals(20100, car.getPrice(), 0.00);
     }
 
 }
