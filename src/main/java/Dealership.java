@@ -2,28 +2,34 @@ import java.util.ArrayList;
 
     public class Dealership {
         Double till;
-        ArrayList<Integer> cars;
+        ArrayList<Car> cars;
+
         public Dealership(Double till){
             this.till = till;
             this.cars = new ArrayList<>();
         }
+
         public Double getTill() {
             return till;
         }
-        public ArrayList<Integer> getCars() {
+
+        public ArrayList<Car> getCars() {
             return cars;
         }
-        public void buyCar(Integer car){
-            this.till -= car;
+
+        public void buyCar(Car car){
+            this.till -= car.getPrice();
             this.cars.add(car);
         }
-        public void sellCar(Integer car){
-            this.till += car;
+
+        public void sellCar(Car car){
+            this.till += car.getPrice();
             this.cars.remove(car);
         }
-        public void payForRepairs(Integer car){
-            this.till -= car;
-            // car.repair(insert damage here)
+
+        public void payForRepairs(Car car){
+            this.till -= car.getDamage();
+            car.setDamage(0);
         }
     }
 
