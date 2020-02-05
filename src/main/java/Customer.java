@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Customer {
     private double money;
-    private ArrayList<Integer> ownedCars;
+    private ArrayList<Car> ownedCars;
 
     public Customer(double money) {
         this.money = money;
@@ -18,7 +18,7 @@ public class Customer {
         return ownedCars.size();
     }
 
-    public void addCar(int car) {
+    public void addCar(Car car) {
         ownedCars.add(car);
     }
 
@@ -26,8 +26,9 @@ public class Customer {
         this.money = this.money - money;
     }
 
-    public void buyCar(int car, int value) {
+    public void buyCar(Car car) {
         addCar(car);
-        removeMoney(value);
+        double price = car.getPrice();
+        removeMoney(price);
     }
 }

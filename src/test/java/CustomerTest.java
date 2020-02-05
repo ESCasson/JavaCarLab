@@ -5,10 +5,14 @@ import static org.junit.Assert.assertEquals;
 
 public class CustomerTest {
     private Customer customer;
+    private Car car;
     @Before
-    public void before(){
+    public void before()
+    {
+        car = new Car("Vauxhall", "Little", 4, "Blue", 0, 100);
         customer = new Customer(300);
     }
+
 
     @Test
     public void doesHaveMoney(){
@@ -22,7 +26,7 @@ public class CustomerTest {
 
     @Test
     public void canAddCarToOwnedCarArray(){
-        customer.addCar(1);
+        customer.addCar(car);
         assertEquals(1, customer.countCarsOwned());
     }
 
@@ -34,10 +38,9 @@ public class CustomerTest {
 
     @Test
     public void canBuyCar(){
-        int car = 1;
-        double value = 50;
-        customer.buyCar(1,50);
-        assertEquals(250, customer.getMoney(), 2d);
+
+        customer.buyCar(car);
+        assertEquals(200, customer.getMoney(), 2d);
         assertEquals(1, customer.countCarsOwned());
 
 
