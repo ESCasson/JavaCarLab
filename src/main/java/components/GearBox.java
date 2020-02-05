@@ -8,5 +8,7 @@ public class GearBox {
         this.transmission = transmission;
     }
 
-
+    public String getTransmission() {
+        return transmission;
+    }
 }
