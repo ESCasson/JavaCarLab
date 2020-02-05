@@ -1,15 +1,20 @@
+import components.FuelEngine;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.awt.*;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class CarTest {
 
     Car car;
+    FuelEngine engine;
 
     @Before
     public void before() {
         car = new Car("Nissan", "Skyline", 3, "Midnight Purple II", 100, 20000);
+        engine = new FuelEngine("Nissan", "R34 N1", "Petrol");
     }
 
     @Test
@@ -66,4 +71,9 @@ public class CarTest {
         assertEquals(20100, car.getPrice(), 0.00);
     }
 
+    @Test
+    public void canAddComponent() {
+        car.addComponent(engine);
+        assertEquals(1, car.getComponentCount());
+    }
 }
