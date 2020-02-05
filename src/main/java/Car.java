@@ -54,7 +54,11 @@ public class Car {
         this.price = newPrice;
     }
 
-    public void setDamage(double newDamage) {
+    public void setDamage(double damage) {
+        this.damage = damage;
+    }
+
+    public void addDamage(double newDamage) {
         this.damage += newDamage;
     }
 

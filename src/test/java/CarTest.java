@@ -45,6 +45,7 @@ public class CarTest {
         assertEquals(100, car.getDamage(), 0.00);
     }
 
+
     @Test
     public void canGetPrice() {
         assertEquals(20000, car.getPrice(), 0.00);
@@ -65,7 +66,13 @@ public class CarTest {
     @Test
     public void canSetDamage() {
         car.setDamage(5000);
-        assertEquals(5100, car.getDamage(), 0.00);
+        assertEquals(5000, car.getDamage(), 0.00);
+    }
+
+    @Test
+    public void canAddDamage() {
+        car.addDamage(1000);
+        assertEquals(1100, car.getDamage(), 0.00);
     }
 
     @Test
